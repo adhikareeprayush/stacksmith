@@ -1,0 +1,76 @@
+{
+  "name": "forgekit",
+  "version": "0.1.0",
+  "description": "The full-stack scaffolding tool that doesn't lock you in.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "forgekit": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "plugins",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/cli.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "scaffold",
+    "boilerplate",
+    "cli",
+    "full-stack",
+    "generator",
+    "mern",
+    "nextjs"
+  ],
+  "author": "Forgekit Contributors",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.5.3",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "fs-extra": "^11.3.0",
+    "handlebars": "^4.7.8",
+    "ora": "^8.2.0",
+    "zod": "^3.25.28"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.28.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.15.29",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vitest": "^3.2.1"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs,cjs,json,md}": [
+      "prettier --write"
+    ],
+    "*.{ts,js,mjs,cjs}": [
+      "eslint --fix"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+test-app/
+test-mern-app/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.turbo/

@@ -1,0 +1,5 @@
+# Plugin templates
+
+This directory holds shared Handlebars templates referenced by plugins during project generation.
+
+Plugins copy and render templates from here into generated projects.
