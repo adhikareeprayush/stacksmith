@@ -1,10 +1,10 @@
-# Forgekit
+# Stacksmith
 
 > The full-stack scaffolding tool that doesn't lock you in.
 
-Forgekit is an interactive CLI that generates production-grade, full-stack boilerplates — personalized to your stack, your database, your auth provider, and your deployment target. No more starting every project by copy-pasting your last one and deleting half of it.
+Stacksmith is an interactive CLI that generates production-grade, full-stack boilerplates — personalized to your stack, your database, your auth provider, and your deployment target. No more starting every project by copy-pasting your last one and deleting half of it.
 
-[![npm version](https://img.shields.io/npm/v/forgekit.svg)](https://www.npmjs.com/package/forgekit)
+[![npm version](https://img.shields.io/npm/v/stacksmith.svg)](https://www.npmjs.com/package/stacksmith)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Status: early access](https://img.shields.io/badge/status-early%20access-orange.svg)](#project-status)
@@ -13,7 +13,7 @@ Forgekit is an interactive CLI that generates production-grade, full-stack boile
 
 ## Project status
 
-**Forgekit is in early access (`v0.1.x`).** The plugin architecture and the long-term
+**Stacksmith is in early access (`v0.1.x`).** The plugin architecture and the long-term
 vision below are real, but only one stack ships end-to-end today:
 
 - ✅ **Shipping now:** the **MERN** preset (Express + React + MongoDB + Mongoose + JWT + Docker)
@@ -21,15 +21,15 @@ vision below are real, but only one stack ships end-to-end today:
 - 🚧 **In progress / planned:** every other frontend, backend, database, ORM, auth provider,
   preset, and the `add` / `ai` / `update` commands. See the [Roadmap](#roadmap).
 
-If you run Forgekit with a stack that isn't implemented yet, you'll get a minimal base project
+If you run Stacksmith with a stack that isn't implemented yet, you'll get a minimal base project
 (not a full scaffold). We'd rather be upfront about that than surprise you. Contributions that fill
 in the matrix are very welcome — that's exactly what the plugin system is for.
 
 ---
 
-## Why Forgekit?
+## Why Stacksmith?
 
-Most generators give you one opinionated stack and call it a day. Forgekit is being built so your
+Most generators give you one opinionated stack and call it a day. Stacksmith is being built so your
 stack is a set of composable choices. The target matrix (✅ = available today, 🚧 = planned):
 
 - **Frontend**: React ✅ · Next.js 🚧 · Vue/Nuxt 🚧 · SvelteKit 🚧 · Astro 🚧
@@ -48,18 +48,18 @@ MERN is the friendly default that works today; the rest is the roadmap we're bui
 The MERN stack works end-to-end right now:
 
 ```bash
-npx forgekit create my-app --preset mern
+npx stacksmith create my-app --preset mern
 ```
 
 Or skip the prompts entirely:
 
 ```bash
-npx forgekit create my-app --preset mern -y
+npx stacksmith create my-app --preset mern -y
 ```
 
 This generates a complete project: an Express server (controllers, services, models, JWT auth,
 validation, error handling, logging), a React + Vite client (auth context, pages, UI components,
-API layer), `docker-compose.yml`, a pre-filled `.env`, and a `forge.config.json`.
+API layer), `docker-compose.yml`, a pre-filled `.env`, and a `stacksmith.config.json`.
 
 ### Presets
 
@@ -83,7 +83,7 @@ A guided CLI experience (@inquirer/prompts + Chalk + Ora) walks you through proj
 choices, and environment variables, then pre-fills your `.env`.
 
 ### 🗄️ Real database integration
-Choosing MongoDB does more than drop in a config file. Forgekit generates connection setup, a User
+Choosing MongoDB does more than drop in a config file. Stacksmith generates connection setup, a User
 model, auth controllers/services, and validation.
 
 ### 🚀 Docker-ready
@@ -102,22 +102,22 @@ model, auth controllers/services, and validation.
 These are part of the vision but **not implemented yet** — tracked on the [Roadmap](#roadmap):
 
 - 🧩 Plugin-based templates for every category (the loader exists; most plugins don't)
-- 🤖 `forgekit ai "<description>"` — AI-assisted module generation
-- 🔄 `forgekit add <feature>` — add auth/payments/file-upload after the fact
-- 🧪 `forgekit update` — update generated boilerplate to latest patterns
+- 🤖 `stacksmith ai "<description>"` — AI-assisted module generation
+- 🔄 `stacksmith add <feature>` — add auth/payments/file-upload after the fact
+- 🧪 `stacksmith update` — update generated boilerplate to latest patterns
 
 ---
 
 ## Commands
 
 ```bash
-forgekit create <name> --preset mern   # ✅ full MERN scaffold (interactive)
-forgekit create <name> [flags]         # ✅ non-interactive with --preset mern -y
-forgekit setup                         # ✅ post-generation: install deps, git init, env setup
-forgekit doctor                        # ✅ diagnose config/env issues
-forgekit add <feature>                 # 🚧 not yet implemented
-forgekit update                        # 🚧 not yet implemented
-forgekit ai <description>              # 🚧 not yet implemented
+stacksmith create <name> --preset mern   # ✅ full MERN scaffold (interactive)
+stacksmith create <name> [flags]         # ✅ non-interactive with --preset mern -y
+stacksmith setup                         # ✅ post-generation: install deps, git init, env setup
+stacksmith doctor                        # ✅ diagnose config/env issues
+stacksmith add <feature>                 # 🚧 not yet implemented
+stacksmith update                        # 🚧 not yet implemented
+stacksmith ai <description>              # 🚧 not yet implemented
 ```
 
 ---
@@ -129,7 +129,7 @@ my-app/
 ├── client/              # React + Vite frontend
 ├── server/              # Express + Mongoose backend
 ├── docker-compose.yml
-├── forge.config.json
+├── stacksmith.config.json
 ├── .env / .env.example
 └── README.md
 ```
@@ -152,7 +152,7 @@ my-app/
 
 ## Contributing
 
-Forgekit is built to be extended, and the most valuable contributions right now are new plugins that
+Stacksmith is built to be extended, and the most valuable contributions right now are new plugins that
 fill in the stack matrix above. See [CONTRIBUTING.md](CONTRIBUTING.md) for the plugin API and
 submission guidelines.
 
@@ -160,4 +160,4 @@ submission guidelines.
 
 ## License
 
-MIT © Forgekit Contributors
+MIT © Stacksmith Contributors

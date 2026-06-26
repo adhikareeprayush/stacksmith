@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
 export function banner(): void {
-  console.log(chalk.bold.cyan("\n  ⚒  Forgekit"));
+  console.log(chalk.bold.cyan("\n  ⚒  Stacksmith"));
   console.log(chalk.dim("  Full-stack scaffolding without lock-in\n"));
 }
 

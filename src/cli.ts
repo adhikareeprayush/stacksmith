@@ -12,7 +12,7 @@ import type { CreateOptions } from "./types/index.js";
 const program = new Command();
 
 program
-  .name("forgekit")
+  .name("stacksmith")
   .description("Full-stack scaffolding tool that doesn't lock you in")
   .version("0.1.0");
 
@@ -24,7 +24,7 @@ program
   .option("--db <database>", "database choice")
   .option("--orm <orm>", "ORM choice")
   .option("--auth <auth>", "auth provider")
-  .option("--from-config <path>", "load choices from forge.config.json")
+  .option("--from-config <path>", "load choices from stacksmith.config.json")
   .option("--monorepo", "use monorepo structure")
   .option("-y, --yes", "skip interactive wizard (requires --preset)")
   .action(async (name: string, options) => {

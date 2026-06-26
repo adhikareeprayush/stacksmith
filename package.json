@@ -1,12 +1,20 @@
 {
-  "name": "forgekit",
+  "name": "stacksmith",
   "version": "0.1.0",
   "description": "The full-stack scaffolding tool that doesn't lock you in.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "forgekit": "./dist/cli.js"
+    "stacksmith": "./dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adhikareeprayush/stacksmith.git"
+  },
+  "homepage": "https://github.com/adhikareeprayush/stacksmith#readme",
+  "bugs": {
+    "url": "https://github.com/adhikareeprayush/stacksmith/issues"
   },
   "files": [
     "dist",
@@ -24,18 +32,27 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "scaffold",
+    "scaffolding",
     "boilerplate",
+    "starter",
     "cli",
     "full-stack",
+    "fullstack",
     "generator",
+    "create-app",
+    "project-generator",
     "mern",
-    "nextjs"
+    "express",
+    "react",
+    "mongodb",
+    "stacksmith"
   ],
-  "author": "Forgekit Contributors",
+  "author": "Stacksmith Contributors",
   "license": "MIT",
   "engines": {
     "node": ">=20"

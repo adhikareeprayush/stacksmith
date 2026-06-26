@@ -95,7 +95,7 @@ volumes:
       path: "README.md",
       content: `# ${name}
 
-Full-stack MERN application generated with [Forgekit](https://github.com/forgekit/forgekit).
+Full-stack MERN application generated with [Stacksmith](https://github.com/adhikareeprayush/stacksmith).
 
 ## Stack
 

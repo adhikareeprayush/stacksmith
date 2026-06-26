@@ -12,7 +12,7 @@ export async function doctorCommand(): Promise<void> {
   const config = await readForgeConfig(cwd);
 
   if (!config) {
-    error("No forge.config.json found in current directory.");
+    error("No stacksmith.config.json found in current directory.");
     process.exitCode = 1;
     return;
   }
@@ -21,7 +21,7 @@ export async function doctorCommand(): Promise<void> {
 
   const checks: Check[] = [
     {
-      name: "forge.config.json is valid",
+      name: "stacksmith.config.json is valid",
       run: async () => config.name.length > 0,
     },
     {
@@ -54,7 +54,7 @@ export async function doctorCommand(): Promise<void> {
   if (failed === 0) {
     success("All checks passed.");
   } else {
-    warn(`${failed} check(s) need attention. Run \`forgekit setup\` to fix common issues.`);
+    warn(`${failed} check(s) need attention. Run \`stacksmith setup\` to fix common issues.`);
     process.exitCode = 1;
   }
 }

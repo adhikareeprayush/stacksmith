@@ -10,7 +10,7 @@ export async function setupCommand(): Promise<void> {
 
   if (!config) {
     throw new Error(
-      "No forge.config.json found. Run this command from a Forgekit project root.",
+      "No stacksmith.config.json found. Run this command from a Stacksmith project root.",
     );
   }
 

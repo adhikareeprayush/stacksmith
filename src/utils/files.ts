@@ -46,7 +46,7 @@ export function resolveProjectDir(name: string, cwd = process.cwd()): string {
 }
 
 export function getForgeConfigPath(projectDir: string): string {
-  return path.join(projectDir, "forge.config.json");
+  return path.join(projectDir, "stacksmith.config.json");
 }
 
 export async function writeForgeConfig(

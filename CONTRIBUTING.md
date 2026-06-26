@@ -1,18 +1,18 @@
-# Contributing to Forgekit
+# Contributing to Stacksmith
 
-Thanks for your interest in contributing! Forgekit is designed to be extended through plugins.
+Thanks for your interest in contributing! Stacksmith is designed to be extended through plugins.
 
 > **Current state (v0.1.x, early access):** only the **MERN** stack is implemented end-to-end
 > (see `src/scaffolds/mern/`). The plugin loader and `ForgePlugin` interface exist, but most
 > categories below have few or no plugins yet, and the `add` / `ai` / `update` commands are stubs.
 > The highest-impact contributions are new plugins that fill in the stack matrix in the
-> [README](README.md#why-forgekit), or new presets that compose them.
+> [README](README.md#why-stacksmith), or new presets that compose them.
 
 ## Development setup
 
 ```bash
-git clone https://github.com/forgekit/forgekit.git
-cd forgekit
+git clone https://github.com/adhikareeprayush/stacksmith.git
+cd stacksmith
 npm install
 npm run build
 npm link
@@ -76,7 +76,7 @@ export default plugin;
 
 1. Create `plugins/<category>/<name>.js` following the API above.
 2. Map the config field to your plugin ID in `src/core/plugin-loader.ts`.
-3. Test: `forgekit create test-app --preset mern -y`
+3. Test: `stacksmith create test-app --preset mern -y`
 
 ## Code style
 

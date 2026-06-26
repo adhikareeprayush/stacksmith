@@ -70,7 +70,7 @@ async function writeBaseProject(ctx: PluginContext): Promise<void> {
     path.join(projectDir, "README.md"),
     `# ${config.name}
 
-Generated with [Forgekit](https://github.com/forgekit/forgekit).
+Generated with [Stacksmith](https://github.com/adhikareeprayush/stacksmith).
 
 ## Getting started
 
