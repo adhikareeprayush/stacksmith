@@ -4,7 +4,7 @@
 
 Stacksmith is an interactive CLI that generates production-grade, full-stack boilerplates — personalized to your stack, your database, your auth provider, and your deployment target. No more starting every project by copy-pasting your last one and deleting half of it.
 
-[![npm version](https://img.shields.io/npm/v/stacksmith.svg)](https://www.npmjs.com/package/stacksmith)
+[![npm version](https://img.shields.io/npm/v/@adhikareeprayush/stacksmith.svg)](https://www.npmjs.com/package/@adhikareeprayush/stacksmith)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Status: early access](https://img.shields.io/badge/status-early%20access-orange.svg)](#project-status)
@@ -48,14 +48,17 @@ MERN is the friendly default that works today; the rest is the roadmap we're bui
 The MERN stack works end-to-end right now:
 
 ```bash
-npx stacksmith create my-app --preset mern
+npx @adhikareeprayush/stacksmith create my-app --preset mern
 ```
 
 Or skip the prompts entirely:
 
 ```bash
-npx stacksmith create my-app --preset mern -y
+npx @adhikareeprayush/stacksmith create my-app --preset mern -y
 ```
+
+> Prefer a shorter command? Install it globally once — `npm i -g @adhikareeprayush/stacksmith` —
+> and then use the `stacksmith` command directly (e.g. `stacksmith create my-app --preset mern`).
 
 This generates a complete project: an Express server (controllers, services, models, JWT auth,
 validation, error handling, logging), a React + Vite client (auth context, pages, UI components,
