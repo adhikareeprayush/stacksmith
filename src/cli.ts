@@ -5,6 +5,7 @@ import { updateCommand } from "./commands/update.js";
 import { doctorCommand } from "./commands/doctor.js";
 import { aiCommand } from "./commands/ai.js";
 import { setupCommand } from "./commands/setup.js";
+import { listCommand } from "./commands/list.js";
 import { banner, error } from "./utils/logger.js";
 import { presetSchema } from "./types/index.js";
 import type { CreateOptions } from "./types/index.js";
@@ -26,6 +27,7 @@ program
   .option("--auth <auth>", "auth provider")
   .option("--from-config <path>", "load choices from stacksmith.config.json")
   .option("--monorepo", "use monorepo structure")
+  .option("--dry-run", "preview the configuration and file plan without writing")
   .option("-y, --yes", "skip interactive wizard (requires --preset)")
   .action(async (name: string, options) => {
     banner();
@@ -40,6 +42,7 @@ program
         fromConfig: options.fromConfig,
         monorepo: options.monorepo,
         yes: options.yes,
+        dryRun: options.dryRun,
       };
       await createCommand(name, createOptions);
     } catch (err) {
@@ -105,6 +108,20 @@ program
   .action(async () => {
     try {
       await setupCommand();
+    } catch (err) {
+      error(err instanceof Error ? err.message : String(err));
+      process.exitCode = 1;
+    }
+  });
+
+program
+  .command("list")
+  .alias("ls")
+  .description("List available presets, stack options, and features")
+  .option("--json", "output as JSON")
+  .action(async (options) => {
+    try {
+      await listCommand({ json: options.json });
     } catch (err) {
       error(err instanceof Error ? err.message : String(err));
       process.exitCode = 1;

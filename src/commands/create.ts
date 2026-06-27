@@ -1,5 +1,6 @@
 import { generateProject } from "../core/generator.js";
 import { buildConfigFromOptions, loadConfigFromFile } from "../core/config.js";
+import { buildCreatePlan } from "../core/plan.js";
 import { runWizard } from "../core/wizard.js";
 import { runMernWizard } from "../core/mern-wizard.js";
 import type { CreateOptions } from "../types/index.js";
@@ -39,6 +40,21 @@ export async function createCommand(
     }
   } else {
     config = await runWizard(name);
+  }
+
+  if (options.dryRun) {
+    const plan = buildCreatePlan(config);
+    info(`Dry run — no files written for ${name}.`);
+    dim("\nResolved configuration:");
+    console.log(JSON.stringify(plan.config, null, 2));
+    dim("\nWould create:");
+    for (const entry of plan.structure) {
+      console.log(`  ${name}/${entry}`);
+    }
+    for (const note of plan.notes) {
+      info(note);
+    }
+    return;
   }
 
   await generateProject(projectDir, config);

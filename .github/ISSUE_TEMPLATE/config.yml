@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/adhikareeprayush/stacksmith/blob/main/CONTRIBUTING.md
+    about: How to add a plugin or preset and submit a PR
+  - name: Security report
+    url: https://github.com/adhikareeprayush/stacksmith/blob/main/SECURITY.md
+    about: Report a vulnerability privately

@@ -100,13 +100,27 @@ model, auth controllers/services, and validation.
 
 ---
 
+## Add features to an existing project
+
+`stacksmith add <feature>` injects ready-to-use tooling into a generated project (and records
+it in `stacksmith.config.json`). Available today:
+
+```bash
+stacksmith add github-actions   # CI workflow (.github/workflows/ci.yml)
+stacksmith add editorconfig     # shared .editorconfig
+stacksmith add dockerignore     # .dockerignore
+stacksmith add vscode           # recommended VS Code extensions + settings
+```
+
+Run `stacksmith list` to see every preset, stack option, and feature with its availability.
+
 ## Planned features
 
 These are part of the vision but **not implemented yet** — tracked on the [Roadmap](#roadmap):
 
 - 🧩 Plugin-based templates for every category (the loader exists; most plugins don't)
 - 🤖 `stacksmith ai "<description>"` — AI-assisted module generation
-- 🔄 `stacksmith add <feature>` — add auth/payments/file-upload after the fact
+- 🔄 `stacksmith add auth|payments|file-upload|email` — stack-level feature modules
 - 🧪 `stacksmith update` — update generated boilerplate to latest patterns
 
 ---
@@ -116,9 +130,11 @@ These are part of the vision but **not implemented yet** — tracked on the [Roa
 ```bash
 stacksmith create <name> --preset mern   # ✅ full MERN scaffold (interactive)
 stacksmith create <name> [flags]         # ✅ non-interactive with --preset mern -y
+stacksmith create <name> --dry-run       # ✅ preview config + file plan without writing
+stacksmith list                          # ✅ list presets, stack options, and features
+stacksmith add <feature>                 # ✅ add CI/editorconfig/dockerignore/vscode
 stacksmith setup                         # ✅ post-generation: install deps, git init, env setup
-stacksmith doctor                        # ✅ diagnose config/env issues
-stacksmith add <feature>                 # 🚧 not yet implemented
+stacksmith doctor                        # ✅ diagnose config/env/Node issues
 stacksmith update                        # 🚧 not yet implemented
 stacksmith ai <description>              # 🚧 not yet implemented
 ```

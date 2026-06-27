@@ -1,0 +1,47 @@
+name: Plugin proposal
+description: Propose a new frontend/backend/database/auth/deployment plugin
+title: "[Plugin]: "
+labels: ["plugin", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Stacksmith is built to be extended. See [CONTRIBUTING.md](https://github.com/adhikareeprayush/stacksmith/blob/main/CONTRIBUTING.md) for the plugin API.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - frontend
+        - backend
+        - database
+        - orm
+        - auth
+        - deployment
+        - feature
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Plugin name / stack option
+      placeholder: "e.g. Fastify, Prisma, Better Auth, Vercel"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: What should it generate?
+      description: Files, config, dependencies, and how it composes with other choices.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to implement this plugin

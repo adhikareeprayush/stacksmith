@@ -115,6 +115,7 @@ export interface CreateOptions {
   fromConfig?: string;
   monorepo?: boolean;
   yes?: boolean;
+  dryRun?: boolean;
 }
 
 export interface AddOptions {
